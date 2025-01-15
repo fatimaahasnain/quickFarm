@@ -1,0 +1,9 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Total Chickens by Health Status</h2>
+  <ul>
+    {% for item in chickens_by_health %}
+      <li>{{ item.health_status }}: {{ item.count }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
