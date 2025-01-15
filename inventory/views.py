@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.utils.timezone import now, timedelta
 from django.db.models import Count
 from datetime import timedelta
-
-
+from django.http import HttpResponse
 # Create your views here.
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Chicken, Egg
@@ -73,3 +72,5 @@ def total_eggs_last_7_days(request):
     last_7_days = timezone.now() - timedelta(days=7)
     total_eggs = Egg.objects.filter(date_collected__gte=last_7_days).aggregate(Sum('quantity'))['quantity__sum'] or 0
     return render(request, 'inventory/total_eggs_last_7_days.html', {'total_eggs': total_eggs})
+
+

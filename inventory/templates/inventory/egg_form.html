@@ -1,9 +1,0 @@
-{% extends 'base_generic.html' %}
-{% block content %}
-  <h2>Add Eggs for {{ chicken.name }}</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Eggs</button>
-  </form>
-{% endblock %}
