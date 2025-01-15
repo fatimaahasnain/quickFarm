@@ -73,4 +73,6 @@ def total_eggs_last_7_days(request):
     total_eggs = Egg.objects.filter(date_collected__gte=last_7_days).aggregate(Sum('quantity'))['quantity__sum'] or 0
     return render(request, 'inventory/total_eggs_last_7_days.html', {'total_eggs': total_eggs})
 
+def home(request):
+    return HttpResponse("Welcome to the homepage of QuickFarm!")
 

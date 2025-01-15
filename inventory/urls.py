@@ -8,5 +8,6 @@ urlpatterns = [
     path('chickens/delete/<int:pk>/', views.chicken_delete, name='chicken_delete'),
     path('eggs/', views.egg_list, name='egg_list'),
     path('eggs/add/<int:chicken_id>/', views.egg_add, name='egg_add'),
+    path('', views.home, name='home'),
    
 ]
